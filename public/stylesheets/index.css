@@ -3,8 +3,121 @@ html {
   margin: 0;
   width: 100%;
   height: 100%;
+  background-image: url("https://some-1256327087.cos.ap-beijing.myqcloud.com/back.jpg?imageMogr2/format/webp/interlace/1/blur/10x1/rquality/52");
+  backdrop-filter: blur(4px);
 }
 
 [v-cloak] {
   display: none;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+.room {
+  box-shadow: 0 0 20px 0 rgb(0 0 0 / 20%);
+  border-radius: 6px;
+  box-sizing: border-box;
+  background: #edeef0;
+  width: 800px;
+  height: 600px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+.room .options {
+  background-color: rgba(204, 204, 204, 0.663);
+  display: flex;
+  flex-direction: column;
+  width: 60px;
+  flex-shrink: 0;
+}
+
+.room .chat-list {
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  border-right: 0.5px solid #ccc;
+}
+
+.room .chat-list .chat-item {
+  padding: 10px;
+  height: 70px;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.room .chat-pannel {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-direction: column;
+}
+
+.room .chat-pannel .chat-name {
+  height: 50px;
+  font-size: 15px;
+  text-indent: 1em;
+  line-height: 50px;
+  margin: 0;
+  border-bottom: 0.5px solid #ccc;
+  flex-shrink: 0;
+}
+
+.room .chat-pannel .chat-main {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.room .chat-pannel .chat-main .msg {
+  display: flex;
+  align-items: center;
+  padding: 10px 10px;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 13px;
+}
+
+.room .chat-pannel .chat-main .msg section {
+  max-width: 260px;
+}
+
+.room .chat-pannel .chat-main .out-msg {
+  justify-content: flex-start;
+}
+
+.room .chat-pannel .chat-main .my-msg {
+  justify-content: flex-end;
+}
+
+.room .chat-pannel .chat-main {
+  flex-grow: 1;
+}
+
+.room .chat-pannel .chat-input {
+  flex-shrink: 0;
+  height: 100px;
+  border-top: 0.5px solid #ccc;
+}
+
+.room .chat-pannel .chat-input textarea {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  padding: 10px;
+  box-sizing: border-box;
 }
