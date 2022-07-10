@@ -25,38 +25,22 @@
             </div>
           </div>
         </div>
-        <div v-cloak class="chat-pannel">
+        <div class="chat-pannel">
           <h3 class="chat-name">这是聊天名字</h3>
           <div class="chat-main">
-            <div class="out-msg msg">
+            <!-- <div class="out-msg msg">
               <section class="info">别人的消息</section>
             </div>
             <div class="my-msg msg">
               <section class="info">我的信息</section>
-            </div>
-            <div class="out-msg msg">
-              <section class="info">别人的消息</section>
-            </div>
-            <div class="my-msg msg">
-              <section class="info">我的信息</section>
-            </div>
-            <div class="my-msg msg">
-              <section class="info">
-                我的信息啊留点时间发啦阿圣诞节发链接撒旦法阿克苏几点过啦建设大街噶几双打立卡噶几双打干垃圾啊
-              </section>
-            </div>
-            <div class="my-msg msg">
-              <section class="info">我的信息</section>
-            </div>
-            <div class="my-msg msg">
-              <section class="info">我的信息</section>
-            </div>
-
-            <div class="my-msg msg">
-              <section class="info">我的信息</section>
-            </div>
-            <div class="my-msg msg">
-              <section class="info">我的信息</section>
+            </div> -->
+            <div v-cloak  v-for="item in chatList" :key="item.id"  :class="{
+              'my-msg':item.type==='mine',
+              'out-msg':item.type==='out',
+              'msg':true,
+              'sys-msg':item.type==='sys'
+            }">
+              <section class="info">{{item.msg}}</section>
             </div>
           </div>
           <div class="chat-input">
@@ -70,7 +54,8 @@
       </div>
     </div>
     <script src="https://unpkg.com/vue@3"></script>
-    <script src="/js/chat_ui.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
     <script src="/js/chat.js"></script>
+    <script src="/js/chat_ui.js"></script>
   </body>
 </html>
