@@ -1,7 +1,10 @@
 const http = require("http");
 
 const path = require("path");
-const { serveStatic, send404, sendFile } = require("./lib/utils");
+const { serveStatic } = require("./lib/utils");
+
+const chatServer = require("./lib/chat_server")
+
 const cache = {};
 
 const server = http.createServer((req, res) => {
@@ -15,6 +18,8 @@ const server = http.createServer((req, res) => {
   const absPath = "./" + filePath;
   serveStatic(res, cache, absPath);
 });
+
+chatServer(server)
 
 const PORT = 3000;
 
